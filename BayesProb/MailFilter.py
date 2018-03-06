@@ -75,7 +75,7 @@ def sep_train_test_data_set(data_mat, class_list):
     test_class_list = []
     rand_index_list = []
 
-    for i in range(6):
+    for i in range(6):   # 随机选择6封邮件作为测试集
         rand_index = int(random.uniform(0, len(data_mat)))
         test_mat.append(data_mat[rand_index])
         test_class_list.append(class_list[rand_index])
