@@ -1,61 +1,44 @@
 import jieba
 import os
-import glob
 import random
 from sklearn.naive_bayes import MultinomialNB
 
-INPUT_DATA = 'sogoSample'
 
+def text_processing(folder_path, test_size=0.2):
+    folder_list = os.listdir(folder_path)  # 查看folder_path下的文件
+    data_list = []  # 数据集数据
+    class_list = []  # 数据集类别
 
-def text_parse(long_str):
-    word_cut = jieba.cut(long_str, cut_all=False)  # 精简模式
-    list_of_words = list(word_cut)
-    return list_of_words
+    # 遍历每个子文件夹
+    for folder in folder_list:
+        new_folder_path = os.path.join(folder_path, folder)  # 根据子文件夹，生成新的路径
+        files = os.listdir(new_folder_path)  # 存放子文件夹下的txt文件的列表
 
+        j = 1
+        # 遍历每个txt文件
+        for file in files:
+            if j > 100:  # 每类txt样本数最多100个
+                break
+            with open(os.path.join(new_folder_path, file), 'r', encoding='utf-8') as f:  # 打开txt文件
+                raw = f.read()
 
-def load_data_set():
-    sub_dirs = [x[0] for x in os.walk(INPUT_DATA)]
-    is_root_dir = True
-    train_list = []
-    test_list = []
-    train_class = []
-    test_class = []
-    doc_list = []
-    for sub_dir in sub_dirs:
-        # 得到的第一个为当前目录，跳过
-        if is_root_dir:
-            is_root_dir = False
-            continue
+            word_cut = jieba.cut(raw, cut_all=False)  # 精简模式，返回一个可迭代的generator
+            word_list = list(word_cut)  # generator转换为list
 
-        extension = 'txt'
-        file_list = []
-        dir_name = os.path.basename(sub_dir)  # 文件名，如“C000008”
+            data_list.append(word_list)  # 添加数据集数据
+            class_list.append(folder)  # 添加数据集类别
+            j += 1
 
-        print(dir_name)
-        file_glob = os.path.join(INPUT_DATA, dir_name, "*." + extension)
-        file_list.extend(glob.glob(file_glob))
-        if not file_list:
-            continue
+    data_class_list = list(zip(data_list, class_list))  # zip压缩合并，将数据与标签对应压缩
+    random.shuffle(data_class_list)  # 将data_class_list乱序
+    index = int(len(data_class_list) * test_size) + 1  # 训练集和测试集切分的索引值
+    train_list = data_class_list[index:]  # 训练集
+    test_list = data_class_list[:index]  # 测试集
+    train_data_list, train_class_list = zip(*train_list)  # 训练集解压缩
+    test_data_list, test_class_list = zip(*test_list)  # 测试集解压缩
 
-        rand_index = int(random.uniform(0, len(file_list)))
-
-        for i, file_name in enumerate(file_list):
-            with open(file_name, 'r', encoding='utf-8') as f:
-                word_list = text_parse(f.read())
-                doc_list.append(word_list)
-                if i == rand_index:
-                    train_list.append(word_list)
-                    train_class.append(file_name)
-                else:
-                    test_list.append(word_list)
-                    test_class.append(file_name)
-
-    return train_list, train_class, test_list, test_class
-
-
-def cul_word_freq(train_list, ):
     all_words_dict = {}  # 统计训练集词频
-    for word_list in train_list:
+    for word_list in train_data_list:
         for word in word_list:
             if word in all_words_dict.keys():
                 all_words_dict[word] += 1
@@ -66,7 +49,7 @@ def cul_word_freq(train_list, ):
     all_words_tuple_list = sorted(all_words_dict.items(), key=lambda f: f[1], reverse=True)
     all_words_list, all_words_nums = zip(*all_words_tuple_list)  # 解压缩
     all_words_list = list(all_words_list)  # 转换成列表
-    return all_words_list
+    return all_words_list, train_data_list, test_data_list, train_class_list, test_class_list
 
 
 def creat_words_set(words_file):
@@ -79,6 +62,7 @@ def creat_words_set(words_file):
     return words_set
 
 
+# 返回特征词列表
 def words_dict(all_words_list, deleteN, stopwords_set=set()):
     feature_words = []  # 特征词列表
     n = 1
@@ -93,24 +77,31 @@ def words_dict(all_words_list, deleteN, stopwords_set=set()):
     return feature_words
 
 
-def creat_vocab_list(train_list, test_list, feature_words):
-    def text_features(text, feature_words):                        #出现在特征集中，则置1
+def creat_data_matrix(tain_list, test_list, feature_words):
+    def text_features(text, feature_words):  # 出现在特征集中，则置1
         text_words = set(text)
         features = [1 if word in text_words else 0 for word in feature_words]
         return features
+
     train_feature_list = [text_features(text, feature_words) for text in train_list]
     test_feature_list = [text_features(text, feature_words) for text in test_list]
-    return train_feature_list, test_feature_list                #返回结果
+    return train_feature_list, test_feature_list  # 返回结果
 
 
-def TextClassifier(train_feature_list, test_feature_list, train_class_list, test_class_list):
-    classifier = MultinomialNB().fit(train_feature_list, train_class_list)
-    test_accuracy = classifier.score(test_feature_list, test_class_list)
+def text_classifier(train_mat, test_mat, train_class, test_class):
+    classifier = MultinomialNB().fit(train_mat, train_class)
+    test_accuracy = classifier.score(test_mat, test_class)
     return test_accuracy
 
+
 if __name__ == '__main__':
-    train_list, train_class, test_list, test_class = load_data_set()
-    all_words_list = cul_word_freq(train_list)
+    all_words_list, train_list, test_list, train_class, \
+    test_class = text_processing('./sogoSample')
 
     stopwords_set = creat_words_set('./stopwords_cn.txt')
     feature_words = words_dict(all_words_list, 100, stopwords_set)
+
+    train_mat, test_mat = creat_data_matrix(train_list, test_list, feature_words)
+
+    test_accuracy = text_classifier(train_mat, test_mat, train_class, test_class)
+    print(test_accuracy)
