@@ -11,27 +11,61 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="LogisticReg.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="LogisticReg.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/LogisticReg.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="534">
-              <caret line="147" column="71" lean-forward="false" selection-start-line="147" selection-start-column="71" selection-end-line="147" selection-end-column="71" />
+            <state relative-caret-position="930">
+              <caret line="72" column="44" lean-forward="true" selection-start-line="72" selection-start-column="12" selection-end-line="72" selection-end-column="44" />
               <folding>
                 <element signature="e#0#31#0" expanded="true" />
-                <element signature="e#91#375#0" expanded="false" />
+                <element signature="e#428#1146#0" expanded="false" />
                 <element signature="e#1175#1210#0" expanded="false" />
-                <element signature="e#2788#3910#0" expanded="false" />
-                <element signature="e#3966#5892#0" expanded="false" />
+                <element signature="e#2777#4699#0" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="function_base.py" pinned="false" current-in-tab="false">
-        <entry file="file://D:/Anaconda3.5/Lib/site-packages/numpy/lib/function_base.py">
+      <file leaf-file-name="HorseColic.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/HorseColic.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="184104">
-              <caret line="5146" column="0" lean-forward="false" selection-start-line="5146" selection-start-column="0" selection-end-line="5146" selection-end-column="0" />
+            <state relative-caret-position="839">
+              <caret line="59" column="18" lean-forward="false" selection-start-line="59" selection-start-column="18" selection-end-line="59" selection-end-column="18" />
+              <folding>
+                <element signature="e#0#18#0" expanded="true" />
+                <element signature="e#115#563#0" expanded="false" />
+                <element signature="e#1255#1795#0" expanded="false" />
+                <element signature="e#2124#2525#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="codecs.py" pinned="false" current-in-tab="false">
+        <entry file="file://D:/Anaconda3.5/Lib/codecs.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="166">
+              <caret line="308" column="0" lean-forward="false" selection-start-line="308" selection-start-column="0" selection-end-line="308" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="defmatrix.py" pinned="false" current-in-tab="false">
+        <entry file="file://D:/Anaconda3.5/Lib/site-packages/numpy/matrixlib/defmatrix.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="186">
+              <caret line="308" column="0" lean-forward="false" selection-start-line="308" selection-start-column="0" selection-end-line="308" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="horseColicTraining.txt" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/horseColicTraining.txt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-1188">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -50,6 +84,7 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/LogisticReg.py" />
+        <option value="$PROJECT_DIR$/HorseColic.py" />
       </list>
     </option>
   </component>
@@ -61,7 +96,7 @@
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
       <flattenPackages />
-      <showMembers />
+      <showMembers ProjectPane="true" />
       <showModules />
       <showLibraryContents />
       <hideEmptyPackages />
@@ -73,6 +108,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
@@ -85,7 +121,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -108,7 +143,24 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.LogisticReg">
+  <component name="RunManager" selected="Python.HorseColic">
+    <configuration name="HorseColic" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="LogisticRegression" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/HorseColic.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+    </configuration>
     <configuration name="LogisticReg" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -126,9 +178,14 @@
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
     </configuration>
+    <list size="2">
+      <item index="0" class="java.lang.String" itemvalue="Python.LogisticReg" />
+      <item index="1" class="java.lang.String" itemvalue="Python.HorseColic" />
+    </list>
     <recent_temporary>
-      <list size="1">
-        <item index="0" class="java.lang.String" itemvalue="Python.LogisticReg" />
+      <list size="2">
+        <item index="0" class="java.lang.String" itemvalue="Python.HorseColic" />
+        <item index="1" class="java.lang.String" itemvalue="Python.LogisticReg" />
       </list>
     </recent_temporary>
   </component>
@@ -148,7 +205,7 @@
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1048" extended-state="6" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="WINDOWED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" x="315" y="523" width="778" height="610" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18562232" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" x="315" y="523" width="778" height="610" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -173,7 +230,14 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="1" />
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/HorseColic.py</url>
+          <line>63</line>
+          <option name="timeStamp" value="14" />
+        </line-breakpoint>
+      </breakpoints>
+      <option name="time" value="16" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -184,10 +248,22 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#0#31#0" expanded="true" />
-            <element signature="e#91#375#0" expanded="false" />
+            <element signature="e#428#1146#0" expanded="false" />
             <element signature="e#1175#1210#0" expanded="false" />
-            <element signature="e#2788#3910#0" expanded="false" />
-            <element signature="e#3966#5892#0" expanded="false" />
+            <element signature="e#2777#4699#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/LogisticReg.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#31#0" expanded="true" />
+            <element signature="e#428#1146#0" expanded="false" />
+            <element signature="e#1175#1210#0" expanded="false" />
+            <element signature="e#2777#4699#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -196,7 +272,33 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="185256">
           <caret line="5146" column="0" lean-forward="false" selection-start-line="5146" selection-start-column="0" selection-end-line="5146" selection-end-column="0" />
-          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/LogisticReg.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#31#0" expanded="true" />
+            <element signature="e#428#1146#0" expanded="false" />
+            <element signature="e#1175#1210#0" expanded="false" />
+            <element signature="e#2777#4699#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://D:/Anaconda3.5/Lib/site-packages/numpy/lib/function_base.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="185256">
+          <caret line="5146" column="0" lean-forward="false" selection-start-line="5146" selection-start-column="0" selection-end-line="5146" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://D:/Anaconda3.5/Lib/site-packages/numpy/lib/function_base.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="219">
+          <caret line="5146" column="0" lean-forward="false" selection-start-line="5146" selection-start-column="0" selection-end-line="5146" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -204,6 +306,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -211,27 +314,56 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="216">
           <caret line="6" column="4" lean-forward="true" selection-start-line="6" selection-start-column="4" selection-end-line="6" selection-end-column="4" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://D:/Anaconda3.5/Lib/site-packages/numpy/lib/function_base.py">
+    <entry file="file://$PROJECT_DIR$/horseColicTraining.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="184104">
-          <caret line="5146" column="0" lean-forward="false" selection-start-line="5146" selection-start-column="0" selection-end-line="5146" selection-end-column="0" />
+        <state relative-caret-position="-1188">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://D:/Anaconda3.5/Lib/site-packages/numpy/matrixlib/defmatrix.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="186">
+          <caret line="308" column="0" lean-forward="false" selection-start-line="308" selection-start-column="0" selection-end-line="308" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/LogisticReg.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="534">
-          <caret line="147" column="71" lean-forward="false" selection-start-line="147" selection-start-column="71" selection-end-line="147" selection-end-column="71" />
+        <state relative-caret-position="930">
+          <caret line="72" column="44" lean-forward="true" selection-start-line="72" selection-start-column="12" selection-end-line="72" selection-end-column="44" />
           <folding>
             <element signature="e#0#31#0" expanded="true" />
-            <element signature="e#91#375#0" expanded="false" />
+            <element signature="e#428#1146#0" expanded="false" />
             <element signature="e#1175#1210#0" expanded="false" />
-            <element signature="e#2788#3910#0" expanded="false" />
-            <element signature="e#3966#5892#0" expanded="false" />
+            <element signature="e#2777#4699#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://D:/Anaconda3.5/Lib/codecs.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="166">
+          <caret line="308" column="0" lean-forward="false" selection-start-line="308" selection-start-column="0" selection-end-line="308" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/HorseColic.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="839">
+          <caret line="59" column="18" lean-forward="false" selection-start-line="59" selection-start-column="18" selection-end-line="59" selection-end-column="18" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+            <element signature="e#115#563#0" expanded="false" />
+            <element signature="e#1255#1795#0" expanded="false" />
+            <element signature="e#2124#2525#0" expanded="false" />
           </folding>
         </state>
       </provider>
