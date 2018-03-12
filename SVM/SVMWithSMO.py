@@ -126,7 +126,7 @@ def smoAlgorithm(dataMat, labelMat, maxCycles, C=0.6, toler=0.01):
     return b, alphas
 
 
-def culcuW(alphas, dataMat, labelMat):
+def calcW(alphas, dataMat, labelMat):
     alphas = np.array(alphas)
     dataMat = np.array(dataMat)
     labelMat = np.array(labelMat)
