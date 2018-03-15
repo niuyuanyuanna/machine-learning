@@ -1,4 +1,5 @@
 import numpy as np
+import matplotlib.pyplot as plt
 
 
 def loadData(fileName):
@@ -104,15 +105,47 @@ def classify(testData, weakClassArr):
     return np.sign(aggClassEst)
 
 
+def plotROC(predStrengths, classLabels):
+    cur = (1.0, 1.0)  # 绘制光标的位置
+    ySum = 0.0  # 用于计算AUC
+    numPosClas = np.sum(np.array(classLabels) == 1.0)  # 统计正类的数量
+    yStep = 1 / float(numPosClas)  # y轴步长
+    xStep = 1 / float(len(classLabels) - numPosClas)  # x轴步长
+
+    sortedIndicies = predStrengths.argsort()  # 预测强度排序
+
+    fig = plt.figure()
+    fig.clf()
+    ax = plt.subplot(111)
+    for index in sortedIndicies.tolist()[0]:
+        if classLabels[index] == 1.0:
+            delX = 0
+            delY = yStep
+        else:
+            delX = xStep
+            delY = 0
+            ySum += cur[1]  # 高度累加
+        ax.plot([cur[0], cur[0] - delX], [cur[1], cur[1] - delY], c='b')  # 绘制ROC
+        cur = (cur[0] - delX, cur[1] - delY)  # 更新绘制光标的位置
+    ax.plot([0, 1], [0, 1], 'b--')
+    plt.title('AdaBoost ROC curve')
+    plt.xlabel('False Negative')
+    plt.ylabel('Ture Positive')
+    ax.axis([0, 1, 0, 1])
+    print('AUC aera:', ySum * xStep)  # 计算AUC
+    plt.show()
+
+
 if __name__ == '__main__':
     trainDataArr, trainLabelArr = loadData('horseColicTraining2.txt')
     testDataArr, testLabelArr = loadData('horseColicTest2.txt')
-    erroEst, weakClassArr = adaBoost(trainDataArr, trainLabelArr, 40)
-
+    erroEst, weakClassArr = adaBoost(trainDataArr, trainLabelArr, 50)
 
     aggClassEst = classify(testDataArr, weakClassArr)
     testErroEst = (aggClassEst != np.mat(testLabelArr).T)
     erroCount = testErroEst.sum()
     erroRate = float(erroCount) / len(testDataArr)
     print('testing erroRate:', erroRate)
+    plotROC(erroEst.T, trainLabelArr)
+
 
